@@ -71,9 +71,9 @@ for i in range(NUM_MAPPERS):
 for i in range(NUM_MAPPERS):
     while kv_get(f"chunk_{i}_done") != "true":
         time.sleep(0.5)
-    print(f"chunk_{i} done ✅")
+    print(f"chunk_{i} done ")
 
-print("All MAP tasks completed ✅")
+print("All MAP tasks completed ")
 
 # ---------------- REDUCE PHASE ----------------
 print("Starting REDUCE phase...")
@@ -96,7 +96,7 @@ for i in range(NUM_REDUCERS):
     if reducer_output:
         final_word_count.update(json.loads(reducer_output))
 
-print("\n✅ MapReduce job completed. Final word counts:")
+print("\n MapReduce job completed. Final word counts:")
 for word, count in sorted(final_word_count.items()):
     print(f"{word}: {count}")
 
